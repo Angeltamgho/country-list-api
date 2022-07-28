@@ -45,7 +45,7 @@ const Countries = () => {
                                 onChange={handleContinent}
                                 checked={continent === selectedRadio}
                                 type="radio" id={continent} />
-                            <label htmlFor="continent"> {continent} </label>
+                            <label htmlFor={continent}> {continent} </label>
                         </li>
                     ))}
                 </ul>
