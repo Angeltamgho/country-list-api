@@ -1,6 +1,6 @@
 # List Country With react js app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 ## `App function : `
 this application just list country **flags, name, capital and population number** by using api from : [https://restcountries.com/v3.1/all]
 
