@@ -35,6 +35,8 @@ body {
   background: $white;
   font-family: $font-1;
   // @include verticalCenter;
+  display: flex;
+  justify-content: center;
 }
 
 li {
