@@ -1,0 +1,112 @@
+@font-face {
+  font-family: "font-1";
+  src: url(../assets/fonts/JosefinSans-Medium.ttf);
+}
+
+$font-1: "font-1", sans-serif;
+
+$color-1: #61dafb;
+$color-2: salmon;
+$color-3: #282c34;
+$white: rgb(243, 243, 243);
+
+@mixin verticalCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.center {
+  text-align: center;
+}
+
+.high-light {
+  color: $color-1;
+  font-weight: bolder;
+}
+
+body {
+  background: $white;
+  font-family: $font-1;
+  // @include verticalCenter;
+}
+
+li {
+  list-style-type: none;
+}
+
+//main content page
+.main {
+  text-align: center;
+  padding: 4rem 2rem;
+
+  //header page
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  //services
+  .list-service {
+    li {
+      text-align: justify;
+      margin-bottom: 2rem;
+
+
+    }
+  }
+
+  //about
+  .about {
+    p {
+      text-align: justify;
+    }
+  }
+
+}
+
+//respond breakpoints
+//list devices
+$list-devices : ("phone-only":559px,
+  "tablet-portrait-up": 600px,
+  "tablet-landscape" : 900px,
+  "desktop":1200px,
+  "big-desktop": 1800px);
+
+// Respond medias queries.
+@mixin for-size($device) {
+
+  @each $device,
+  $size in $list-devices {
+    @if $device =="phone-only" {
+      @media (max-width: ($size)) {
+        @content;
+      }
+    }
+
+    @else {
+      @media (min-width: ($size)) {
+        @content;
+      }
+    }
+  }
+
+
+
+}
+
+.footer {
+  position: relative;
+  top: auto;
+  padding: 2rem;
+  bottom: 0;
+}
